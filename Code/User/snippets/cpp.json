@@ -1,0 +1,17 @@
+{
+    "C++ Code Boilerplate": {
+        "prefix": "log",
+        "body": [
+            "#include <iostream>",
+            "using namespace std;",
+            "",
+            "int main() {",
+            "",
+            "    $0/*Write your code here*/",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "C++ Code Boilerplate"
+    }
+}

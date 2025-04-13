@@ -1,0 +1,16 @@
+{
+    "C Code Boilerplate": {
+        "prefix": "log",
+        "body": [
+            "#include <stdio.h>",
+            "",
+            "int main() {",
+            "",
+            "\t${1:/*Write your code here*/}",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "C Code Boilerplate"
+    }
+}
