@@ -1,0 +1,119 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 50,
+    "modules-left": ["hyprland/workspaces", "cpu", "memory", "tray", ],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "bluetooth", "temperature", "battery", "backlight", "pulseaudio", ],
+    "hyprland/window": {
+        "format": "{}",
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+    },
+
+    "clock": {
+        "format": "{:%H:%M %a, %b %e}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "gnome-calendar",
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6,
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20,
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": true,
+        "format-muted": " Muted",
+        "on-click": "amixer set Master toggle",
+        "on-click-right": "kitty -e alsamixer",
+        "on-scroll-up": "amixer set Master 1%+",
+        "on-scroll-down": "amixer set Master 1%-",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""],
+        },
+    },
+
+    "temperature": {
+        "thermal-zone": 1,
+        "format": "{temperatureF}°F ",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {num_connections} connected",
+        "tooltip": true,
+        "tooltip-format": "Bluetooth: {status}\nDevices: {num_connections}",
+        "on-click": "blueman-manager",
+    },
+
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+        "on-click-right": "kitty -e nmtui",
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {}%",
+        "states": {
+            "moderate": 30,
+            "high": 70
+        },
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": " {percentage}%",
+        "format-alt": " {used:0.1f}GB/{total:0.1f}GB",
+        "tooltip": true,
+        "tooltip-format": "RAM Usage: {used:0.1f}GB / {total:0.1f}GB ({percentage}%)",
+        "max-length": 15,
+        "states": {
+            "moderate": 50,
+            "high": 80
+        }
+    },
+
+}
