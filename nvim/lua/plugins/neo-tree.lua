@@ -24,7 +24,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>n", ":Neotree toggle left<CR>", { noremap = true, silent = true })
-    vim.keymap.set("n", "<C-b>", ":Neotree focus<CR> left", { noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>n", ":Neotree toggle right<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "<C-b>", ":Neotree focus right<CR>", { noremap = true, silent = true })
   end,
 }
