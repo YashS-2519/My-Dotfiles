@@ -108,7 +108,6 @@
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": false,
   "workbench.iconTheme": "symbols",
-  "workbench.sideBar.location": "right",
   "chat.commandCenter.enabled": false,
   "workbench.navigationControl.enabled": false,
 
